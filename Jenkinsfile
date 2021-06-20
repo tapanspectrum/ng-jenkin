@@ -13,7 +13,8 @@ pipeline {
         stage('Artifact Archiving') {
             steps {
                 echo 'The Artifact will be uploaded to an artifact repository'
-                sh "tar czf ng_app-$BUILD_NUMBER.tar.gz node_modules dist src package.json angular.json"
+                archiveArtifacts artifacts: '*.jar', fingerprint: true
+                // sh "tar czf ng_app-$BUILD_NUMBER.tar.gz node_modules dist src package.json angular.json"
             }
         }
         stage('Testing') {
