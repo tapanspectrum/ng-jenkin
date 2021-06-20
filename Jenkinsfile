@@ -6,6 +6,7 @@ pipeline {
         stage('Building') {
             steps {
                 echo 'The Code will be now be built into an artifact'
+                npm install 
             }
         }
         stage('Artifact Archiving') {
