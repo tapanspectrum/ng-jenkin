@@ -6,17 +6,20 @@ pipeline {
         stage('Building') {
             steps {
                 echo 'The Code will be now be built into an artifact'
-                npm install 
+                sh "npm install"
+                sh "npm run-script build"
             }
         }
         stage('Artifact Archiving') {
             steps {
                 echo 'The Artifact will be uploaded to an artifact repository'
+                sh "tar czf ng_app-$BUILD_NUMBER.tar.gz node_modules dist src package.json angular.json"
             }
         }
         stage('Testing') {
             steps {
                 echo 'The Artifact will be tested'
+                sh "npm run-script test"
             }
         }
         stage('Staging') {
