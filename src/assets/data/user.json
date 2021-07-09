@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "full_name": "Tapan Acharjee",
+        "email": "tapanspectrum@gmail.com",
+        "username": "taputest",
+        "password": "taputest",
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqd3QgdGVzdCIsImlhdCI6MTYyMTQxNzg1OCwiZXhwIjoxNjUzMDQwMjU4LCJhdWQiOiJodHRwczovL3RhcGFuYWNoYXJqZWUuY29tIiwic3ViIjoidGFwYW5zcGVjdHJ1bUBnbWFpbC5jb20iLCJHaXZlbk5hbWUiOiJUYXB1IiwiRW1haWwiOiJ0YXBhbnNwZWN0cnVtQGdtYWlsLmNvbSIsIlJvbGUiOiJhZG1pbiJ9.-pgdTM1FYerAiUX3kFtWfJZZR4BxXFrENgX_kEKGVrs"
+    },
+    {
+        "id": 2,
+        "full_name": "Vanessa Kibbye",
+        "email": "vkibbye1@theatlantic.com",
+        "username": "vkibbye1",
+        "password": "UcNQfPClGg",
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqd3QgdGVzdCIsImlhdCI6MTYyMTQxNzg1OCwiZXhwIjoxNjUzMDQwMjU4LCJhdWQiOiJodHRwczovL3RhcGFuYWNoYXJqZWUuY29tIiwic3ViIjoidGFwYW5zcGVjdHJ1bUBnbWFpbC5jb20iLCJHaXZlbk5hbWUiOiJUYXB1IiwiRW1haWwiOiJ0YXBhbnNwZWN0cnVtQGdtYWlsLmNvbSIsIlJvbGUiOiJhZG1pbiJ9.-pgdTM1FYerAiUX3kFtWfJZZR4BxXFrENgX_kEKGVrs"
+    },
+    {
+        "id": 3,
+        "full_name": "Trista Vany",
+        "email": "tvany2@parallels.com",
+        "username": "tvany2",
+        "password": "MIoLqMJ0Q6",
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqd3QgdGVzdCIsImlhdCI6MTYyMTQxNzg1OCwiZXhwIjoxNjUzMDQwMjU4LCJhdWQiOiJodHRwczovL3RhcGFuYWNoYXJqZWUuY29tIiwic3ViIjoidGFwYW5zcGVjdHJ1bUBnbWFpbC5jb20iLCJHaXZlbk5hbWUiOiJUYXB1IiwiRW1haWwiOiJ0YXBhbnNwZWN0cnVtQGdtYWlsLmNvbSIsIlJvbGUiOiJhZG1pbiJ9.-pgdTM1FYerAiUX3kFtWfJZZR4BxXFrENgX_kEKGVrs"
+    }
+]
