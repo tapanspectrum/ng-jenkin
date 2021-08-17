@@ -26,6 +26,7 @@ pipeline {
         }
         stage('Staging') {
             steps {
+                echo 'Currently skipped'
                 echo 'The Artifact is staged onto the staging server'
             }
         }
