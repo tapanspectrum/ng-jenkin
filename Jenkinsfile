@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'The Artifact will be uploaded to an artifact repository'
                 // archiveArtifacts artifacts: '*.jar', fingerprint: true
-                sh "tar czf ng_app-$BUILD_NUMBER.tar.gz node_modules dist src package.json angular.json"
+                // sh "tar czf ng_app-$BUILD_NUMBER.tar.gz node_modules dist src package.json angular.json"
                 echo 'The Artifact zip successfully'
             }
         }
@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'The software will now be deployed!'
-                sh "mv dist/ng-jenkin/* /var/www/html"
+                sh "mv dist/ng-jenkin/* /var/www/demo"
             }
         }
     }    

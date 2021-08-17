@@ -1,0 +1,46 @@
+
+  <div class="sidebar">
+    <h3 class="sidebar-title">Search</h3>
+    <div class="sidebar-item search-form">
+      <form action="javascript:void(0);">
+        <input type="text" #data/>
+        <button  (click)="_sendDataToParent(data.value)"  ><i class="icofont-search"></i></button>
+      </form>
+    </div>
+    <!-- End sidebar search formn-->
+
+    <h3 class="sidebar-title">Categories</h3>
+    <div class="sidebar-item categories">
+      <ul *ngIf="getAllCat">
+        <li *ngFor="let category of getAllCat">
+          <a *ngIf="getRouteName ==='/blog'" (click)="_sendDataToParentCatName(category._id)" >{{category._id}} <span>({{category.data.length}})</span></a>
+          <a *ngIf="getRouteName !='/blog'">{{category._id}} <span>({{category.data.length}})</span></a>
+        </li>
+      </ul>
+    </div>
+    <!-- End sidebar categories-->
+
+    <h3 class="sidebar-title">Recent Posts</h3>
+    <div class="sidebar-item recent-posts" *ngIf="getAllRecentPost">
+      <div class="post-item clearfix" *ngFor="let post of getAllRecentPost">
+        <img  [src]="imgUrl+post.imageId" alt="" />
+        <h4>
+          <a [routerLink]="['/blog/blog-details/',post.bolgId]">{{post.blogTitle}}</a>
+        </h4>
+        <time datetime="2020-01-01">{{post.blogDate | date}}</time>
+      </div>
+    </div>
+    <!-- End sidebar recent posts-->
+
+    <h3 class="sidebar-title">Tags</h3>
+    <div class="sidebar-item tags">
+      <ul *ngIf="getAllTags">
+        <li *ngFor="let tag of getAllTags">
+          <a *ngIf="getRouteName ==='/blog'" (click)="_sendDataToParentTag(tag._id)" >{{tag._id}}</a>
+          <a *ngIf="getRouteName !='/blog'">{{tag._id}}</a>
+        </li>
+      </ul>
+    </div>
+    <!-- End sidebar tags-->
+  </div>
+  <!-- End sidebar -->

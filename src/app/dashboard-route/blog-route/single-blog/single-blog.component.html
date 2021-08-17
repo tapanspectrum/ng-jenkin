@@ -1,0 +1,118 @@
+<app-blog-header></app-blog-header>
+<main id="main">
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/blog/">Blog</a></li>
+        <li>Blog Single</li>
+      </ol>
+      <h2>{{blogContent?.blogTitle}}</h2>
+    </div>
+  </section>
+  <!-- End Breadcrumbs -->
+
+  <!-- ======= Blog Single Section ======= -->
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-8 entries">
+          <article class="entry entry-single" *ngIf="blogContent">
+            <div class="entry-img">
+              <img
+                [src]="imgUrl + blogContent.imageId"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+
+            <h2 class="entry-title">
+              <a>{{ blogContent.blogTitle }}</a>
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center">
+                  <i class="icofont-user"></i>
+                  <a>{{ blogContent.blogCreater }}</a>
+                </li>
+                <li class="d-flex align-items-center">
+                  <i class="icofont-wall-clock"></i>
+                  <a><time datetime="2020-01-01">{{
+                      blogContent.blogDate | date
+                    }}</time></a
+                  >
+                </li>
+                <li class="d-flex align-items-center">
+                  <i class="icofont-comment"></i>
+                  <a>12 Comments</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="entry-content">
+              <p>
+                {{ blogContent.blogContent }}
+              </p>
+            </div>
+
+            <div class="entry-footer clearfix">
+              <div class="float-left">
+                <i class="icofont-folder"></i>
+                <ul class="cats">
+                  <li>
+                    <a href="#">{{ blogContent.blogCategory }}</a>
+                  </li>
+                </ul>
+
+                <i class="icofont-tags"></i>
+                <ul class="tags">
+                  <li>
+                    <a href="#">{{ blogContent.blogTag }}</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="float-right share">
+                <a href="" title="Share on Twitter"
+                  ><i class="icofont-twitter"></i
+                ></a>
+                <a href="" title="Share on Facebook"
+                  ><i class="icofont-facebook"></i
+                ></a>
+                <a href="" title="Share on Instagram"
+                  ><i class="icofont-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+          <!-- End blog entry -->
+
+          <app-user-detail          
+          *ngIf="blogCreaterID"
+            [item]="blogCreaterID"
+          ></app-user-detail>
+          <!-- End blog author bio -->
+
+          <app-comment-section
+            *ngIf="commentsId"
+            [item]="commentsId"
+          ></app-comment-section>
+          <!-- End blog comments -->
+        </div>
+        <!-- End blog entries list -->
+
+        <div class="col-lg-4">
+          <app-blog-sidebar  *ngIf="blogId"
+          [blogId]="blogId" (sendDataToParent)="eventFromChild($event)" ></app-blog-sidebar>
+          <!-- End sidebar -->
+        </div>
+        <!-- End blog sidebar -->
+      </div>
+    </div>
+  </section>
+  <!-- End Blog Single Section -->
+</main>
+<!-- End #main -->
+<app-blog-footer></app-blog-footer>

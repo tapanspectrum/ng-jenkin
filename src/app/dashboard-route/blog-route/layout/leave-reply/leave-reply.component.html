@@ -1,0 +1,55 @@
+<div class="reply-form">
+    <h4>Leave a Reply</h4>
+    <p>
+      Your email address will not be published. Required fields are
+      marked *
+    </p>
+    <form [formGroup] = "checkoutForm" (ngSubmit) = "onSubmit()" >
+
+
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <input
+            name="name"
+            formControlName="name"
+            type="text"
+            class="form-control"
+            placeholder="Your Name*"
+          />
+        </div>
+        <div class="col-md-6 form-group">
+          <input
+            name="email"
+            formControlName="email"
+            type="text"
+            class="form-control"
+            placeholder="Your Email*"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col form-group">
+          <input
+            name="website"
+            formControlName="website"
+            type="text"
+            class="form-control"
+            placeholder="Your Website"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col form-group">
+          <textarea
+            name="comment"
+            formControlName="comment"
+            class="form-control"
+            placeholder="Your Comment*"
+          ></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        Post Comment
+      </button>
+    </form>
+  </div>

@@ -1,0 +1,83 @@
+<app-blog-header></app-blog-header>
+<main id="main">
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/blog/">Blog</a></li>
+      </ol>
+      <h2>Blog</h2>
+    </div>
+  </section>
+  <!-- End Breadcrumbs -->
+
+  <!-- ======= Blog Section ======= -->
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-8 entries">
+          <article class="entry" *ngFor="let item of collection | paginate: {
+            itemsPerPage: itemsPerPage,
+            currentPage: p,
+            totalItems: totalItems
+          }">
+            <div class="entry-img">
+              <img [src]="imgUrl+item.imageId"  alt="" class="img-fluid" />
+            </div>
+
+            <h2 class="entry-title">
+              <a [routerLink]="['/blog/blog-details/',item.bolgId]"
+                >{{item.blogTitle}}</a
+              >
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center">
+                  <i class="icofont-user"></i>
+                  <a [routerLink]="['/blog/blog-details/',item.bolgId]">{{item.blogCreater}}</a>
+                </li>
+                <li class="d-flex align-items-center">
+                  <i class="icofont-wall-clock"></i>
+                  <a [routerLink]="['/blog/blog-details/',item.bolgId]"
+                    ><time datetime="2020-01-01">{{item.blogDate | date}}</time></a
+                  >
+                </li>
+                <li class="d-flex align-items-center">
+                  <i class="icofont-comment"></i>
+                  <a [routerLink]="['/blog/blog-details/',item.bolgId]">12 Comments</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="entry-content">
+              <p>
+                {{item.blogContent}}
+              </p>
+              <div class="read-more">
+                <a [routerLink]="['/blog/blog-details/',item.bolgId]">Read More</a>
+              </div>
+            </div>
+          </article>
+          <!-- End blog entry -->
+          <div class="blog-pagination" *ngIf="collection?.length === 0">
+            <span class="text-danger">No Data Founder</span>
+          </div>
+          <div class="blog-pagination" *ngIf="collection?.length > 0">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+        </div>
+        <!-- End blog entries list -->
+
+        <div class="col-lg-4">
+          <app-blog-sidebar (sendDataToParent)="eventFromChild($event)" (sendDataToParentCatName)="eventFromChildCat($event)" (sendDataToParentTag)="eventFromChildTag($event)"></app-blog-sidebar>
+        </div>
+        <!-- End blog sidebar -->
+      </div>
+    </div>
+  </section>
+  <!-- End Blog Section -->
+</main>
+<!-- End #main -->
+<app-blog-footer></app-blog-footer>
