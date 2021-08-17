@@ -38,5 +38,12 @@ pipeline {
                 sh "mv dist/ng-jenkin/* /var/www/demo"
             }
         }
-    }    
+
+        
+    } 
+    post {
+        always {
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+        }
+    }   
 }
