@@ -1,9 +1,3 @@
-/**
-* Template Name: Presento - v1.1.1
-* Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 !(function($) {
   "use strict";
 

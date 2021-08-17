@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'The software will now be deployed!'
-                sh "mv dist/ng-jenkin/* /var/www/html"
+                sh "mv dist/ng-jenkin/* /var/www/demo"
             }
         }
     }    

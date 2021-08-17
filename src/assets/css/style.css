@@ -1,10 +1,3 @@
-/**
-* Template Name: Presento - v1.1.1
-* Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -357,7 +350,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center no-repeat;
+  background: url("../img/1614604.jpg") top center no-repeat;
   background-size: cover;
   position: relative;
   padding-top: 82px;

@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 import { BlogComponent } from './blog/blog.component';
 import { SingleBlogComponent } from './single-blog/single-blog.component';
 import { BlogRoutingModule } from './blog-routing.module';
@@ -25,7 +31,11 @@ import { LeaveReplyComponent } from './layout/leave-reply/leave-reply.component'
   ],
   imports: [
     CommonModule,
-    BlogRoutingModule
+    BlogRoutingModule,
+    HttpClientModule,
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot({ timeOut: 2000 ,enableHtml: true }),
   ]
 })
 export class BlogRouteModule { }

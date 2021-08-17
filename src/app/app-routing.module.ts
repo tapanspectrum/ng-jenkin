@@ -9,15 +9,32 @@ const routes: Routes = [
       import(`./dashboard-route/dashboard-route.module`).then(
         (m) => m.DashboardRouteModule
       ),
-  },
+    data: {
+      title: 'Acharya Development',
+      metaDescriptionContent:'Best Website Development Service Provider',
+      metaAuthorContent:'Acharya Development',
+      metakeywordsContent: 'website,website devlopment,best website developer '
+    },
+  }, 
+  // {
+  //   path: 'blog',
+  //   // canActivate: [AuthGuardService],
+  //   loadChildren: () =>
+  //     import(`./dashboard-route/blog-route/blog-route.module`).then(
+  //       (m) => m.BlogRouteModule
+  //     ),
+  //   data: {
+  //     title: 'Acharya Development Blog ',
+  //   },
+  // },
   {
-    path: 'blog',
-    // canActivate: [AuthGuardService],
-    loadChildren: () =>
-      import(`./dashboard-route/blog-route/blog-route.module`).then((m) => m.BlogRouteModule),
+    path: '404',
+    component: NotfoundComponent,
+    data: {
+      title: 'Page Not Found',
+    },
   },
-  {path: '404', component: NotfoundComponent},
-  {path: '**', redirectTo: '/404'}
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({

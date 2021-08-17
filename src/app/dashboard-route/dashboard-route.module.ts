@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { JwPaginationModule } from 'jw-angular-pagination';
+import { ToastrModule } from 'ngx-toastr';
+import { ModalModule, BsModalService } from 'ngx-bootstrap/modal'; 
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
@@ -17,6 +22,8 @@ import { PricingComponent } from './dashboard-content/pricing/pricing.component'
 import { FaqComponent } from './dashboard-content/faq/faq.component';
 import { TeamComponent } from './dashboard-content/team/team.component';
 import { ContactComponent } from './dashboard-content/contact/contact.component';
+import { ReadmoreComponent } from '../shared/readmore/readmore.component';
+
 
 
 
@@ -37,11 +44,16 @@ import { ContactComponent } from './dashboard-content/contact/contact.component'
     PricingComponent,
     FaqComponent,
     TeamComponent,
-    ContactComponent
+    ContactComponent,
+    ReadmoreComponent
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    JwPaginationModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot({ timeOut: 2000 ,enableHtml: true }),
+    ModalModule.forRoot()
   ]
 })
 export class DashboardRouteModule { }

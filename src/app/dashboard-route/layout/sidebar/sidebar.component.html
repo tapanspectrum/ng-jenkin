@@ -1,18 +1,93 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
-
-    <div class="container-fluid" data-aos="zoom-out" data-aos-delay="100">
-      <div class="row justify-content-center">
-        <div class="col-xl-10">
-          <div class="row">
-            <div class="col-xl-5">
-              <h1>Bettter digital experience with Presento</h1>
-              <h2>We are team of talented designers making websites with Bootstrap</h2>
-              <a href="#about" class="btn-get-started scrollto">Get Started</a>
-            </div>
+  <div class="container-fluid" data-aos="zoom-out" data-aos-delay="100">
+    <div class="row justify-content-center">
+      <div class="col-xl-10">
+        <div class="row">
+          <div class="col-xl-5">
+            <h1>Bettter digital experience with Acharya Development Team</h1>
+            <h2>
+              We are team of talented designers making websites with latest
+              technologies.
+            </h2>
+            <a
+              href="#about"
+              (click)="open(mymodal, 'comment')"
+              class="btn-get-started scrollto"
+              >Get Started</a
+            >
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+<!-- End Hero -->
 
-  </section><!-- End Hero -->
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Send Your Requirement</h4>
+    <button
+      type="button"
+      id="close_btn"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="reply-form">
+      <p>
+        Your email address will not be published. Required fields are marked *
+      </p>
+      <form [formGroup] = "requirementForm" (ngSubmit) = "onSubmit()" class="php-email-form">
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input
+              name="name"
+              formControlName="name"
+              type="text"
+              class="form-control"
+              placeholder="Your Name*"
+            />
+          </div>
+          <div class="col-md-6 form-group">
+            <input
+              name="email"
+              formControlName="email"
+              type="email"
+              class="form-control"
+              placeholder="Your Email*"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col form-group">
+            <input
+              name="Contact No."
+              formControlName="contactno"
+              type="text"
+              class="form-control"
+              placeholder="Your Contact No.*"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col form-group">
+            <textarea
+              name="message"
+              formControlName="message"
+              class="form-control"
+              placeholder="Your requirement"
+            ></textarea>
+          </div>
+        </div>
+        <button type="submit" [disabled]="!requirementForm.valid" class="btn btn-primary">Post Requirement</button>
+      </form>
+    </div>
+  </div>
+</ng-template>
