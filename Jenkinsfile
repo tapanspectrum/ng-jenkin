@@ -34,6 +34,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'The software will now be deployed!'
+                sh "rm -r /var/www/demo/*"
                 sh "mv dist/ng-jenkin/* /var/www/demo"
             }
         }
